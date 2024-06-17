@@ -36,7 +36,7 @@
     "nuxt": "3.12.1",
     "sass": "^1.77.4",
     "start-server-and-test": "^2.0.4",
-    "vuetify": "^3.6.8"
+    "vuetify": "^3.6.9"
   },
   "dependencies": {
     "vite-plugin-vuetify": "^2.0.3"
