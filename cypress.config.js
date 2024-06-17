@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-import endpoints from "./resourcers/endpoints.json";
+import endpoints from "./resourcers/endpoints.json" assert { type: 'json' };
 import fs from "fs";
 import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import {
@@ -22,9 +22,9 @@ export default defineConfig({
   e2e: {
     specPattern: "**/*.feature",
     async setupNodeEvents(
-      on: Cypress.PluginEvents,
-      config: Cypress.PluginConfigOptions
-    ): Promise<Cypress.PluginConfigOptions> {
+      on,
+      config
+    ) {
       await addCucumberPreprocessorPlugin(on, config);
       on(
         "file:preprocessor",
@@ -32,7 +32,7 @@ export default defineConfig({
           plugins: [createEsbuildPlugin(config)],
         })
       );
-      on("after:spec", async (spec: Cypress.Spec, results: CypressCommandLine.RunResult) => {
+      on("after:spec", async (spec, results) => {
         await afterSpecHandler(config, spec, results);
         if (results && results.video) {
           const failures = results.tests.some((test) =>
