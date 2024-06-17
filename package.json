@@ -26,7 +26,7 @@
     "e2e:electron:lenovo": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --config-file configs/cypress.lenovo.config.ts --browser electron --ci-build-id paqboc"
   },
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.7",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@faker-js/faker": "^8.4.1",
     "@iconify/vue": "^4.1.2",
