@@ -33,7 +33,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@vite-pwa/nuxt": "^0.8.0",
     "cypress": "^13.11.0",
-    "nuxt": "3.12.1",
+    "nuxt": "3.12.2",
     "sass": "^1.77.4",
     "start-server-and-test": "^2.0.4",
     "vuetify": "^3.6.8"
