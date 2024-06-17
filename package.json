@@ -5,20 +5,37 @@
   "engines": {
     "node": ">=18.x"
   },
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "reset": "rm -rf .nuxt node_modules .output package-lock.json && npm install",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test:e2e": "start-server-and-test dev http://localhost:3000 'cypress run'",
+    "open:cypress": "npx cypress open",
+    "e2e:chrome:Macbook16": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --browser chrome",
+    "e2e:edge:Macbook16": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --browser edge --ci-build-id paqboc",
+    "e2e:electron:Macbook16": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --browser electron --ci-build-id paqboc",
+    "e2e:chrome:Macbook15": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --config-file configs/cypress.mackbook15.config.ts --browser chrome --ci-build-id paqboc",
+    "e2e:edge:Macbook15": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --config-file config/cypress.mackbook15.config.ts --browser edge --ci-build-id paqboc",
+    "e2e:electron:Macbook15": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --config-file config/cypress.mackbook15.config.ts --browser electron --ci-build-id paqboc",
+    "e2e:chrome:lenovo": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --config-file configs/cypress.lenovo.config.ts --browser chrome --ci-build-id paqboc",
+    "e2e:edge:lenovo": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --config-file configs/cypress.lenovo.config.ts --browser edge --ci-build-id paqboc",
+    "e2e:electron:lenovo": "npx cypress run --record --key ba18b2c9-f759-4649-8c59-020798119698 --config-file configs/cypress.lenovo.config.ts --browser electron --ci-build-id paqboc"
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@faker-js/faker": "^8.4.1",
     "@iconify/vue": "^4.1.2",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@vite-pwa/nuxt": "^0.8.0",
+    "cypress": "^13.11.0",
     "nuxt": "3.12.1",
     "sass": "^1.77.4",
+    "start-server-and-test": "^2.0.4",
     "vuetify": "^3.6.8"
   },
   "dependencies": {
